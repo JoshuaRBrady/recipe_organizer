@@ -1,0 +1,66 @@
+<div class="container">
+    <div>
+        <label>Recipe Name</label>
+        <input class="form-control"
+               type="text"
+               ng-model="recipe.name"
+               placeholder="Enter recipe name...">
+    </div>
+    <br>
+     <div>
+        <label>Recipe Photo</label>
+        <input class="form-control"
+               type="text"
+               ng-model="recipe.photo"
+               placeholder="Enter image path...">
+    </div>
+
+    <div>
+        <label>Prep Time</label>
+        <input class="form-control"
+               type="text"
+               ng-model="recipe.prep_time"
+               placeholder="In minutes...">
+    </div>
+    <br>
+
+    <div>
+        <label>Description</label>
+        <textarea
+                type="text"
+                ng-model="recipe.description"
+                placeholder="Why is this a great recipe? Does it have a history?"
+                class="form-control"
+                rows="10">
+        </textarea>
+    </div>
+    <br>
+
+    <div>
+        <label>Cook Time</label>
+        <input class="form-control margin-bottom-20"
+               type="text"
+               ng-model="recipe.cook_time"
+               placeholder="In minutes...">
+
+
+    </div>
+    <br>
+
+    <div>
+        <div>
+            <label>Ingredients</label>
+            <input class="form-control"
+                   type="text"
+                   ng-model="ingredientName"
+                   typeahead="ingredient.name for ingredient in ingredients | filter:$viewValue | limitTo:20"
+                   placeholder="Enter an ingredient...">
+
+            <ol>
+                <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+            </ol>
+        </div>
+
+        <button class="btn btn-success col-xs-12" ng-click="saveNewRecipe()" style="float: right">Save this</button>
+    </div>
+</div>

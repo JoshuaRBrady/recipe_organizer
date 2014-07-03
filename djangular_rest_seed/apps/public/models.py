@@ -3,12 +3,13 @@ from django.db import models
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
-    # photo = models.ImageField(upload_to='photos', blank=True)
-    description = models.CharField(max_length=150, default="Yum.")
+    photo = models.CharField(max_length=100, blank=True, null=True)
+    description = models.CharField(max_length=200, default="Yum.")
     prep_time = models.IntegerField(default=0)
     cook_time = models.IntegerField(default=0)
     num_servings = models.IntegerField(max_length=4)
-    ingredients = models.ManyToManyField("Ingredient")
+    ingredients = models.ManyToManyField("Ingredient", null=True, blank=True)
+    directions = models.TextField(default="Please enter instructions on how to create this amazing cuisine.")
     tag = models.ManyToManyField("RecipeTag")
 
     def __unicode__(self):

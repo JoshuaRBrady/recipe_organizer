@@ -3,14 +3,14 @@
 }
 
 .recipe_cards {
-    /*background-image: url("{{ recipe.recipe_photo }}");*/
-    /*background-repeat: no-repeat;*/
     border: 1px solid;
     font-family: sans-serif;
     text-align: center;
     margin: 25px;
     height: 30em;
     width: 30em;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .blog_sidebar {
@@ -29,9 +29,10 @@
 
 .btn {
     float: right;
-    margin: 5px;
+    margin: 0 5px 0 5px;
     width: 100px;
     height: 35px;
+    text-align: center;
 }
 
 .views {

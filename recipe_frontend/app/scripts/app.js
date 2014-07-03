@@ -36,6 +36,10 @@ angular
                 templateUrl: 'views/recipe_detail.html',
                 controller: 'RecipeDetailCtrl'
             })
+            .when('/add_recipe', {
+                templateUrl: 'views/add_recipe.html',
+                controller: 'AddRecipeCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

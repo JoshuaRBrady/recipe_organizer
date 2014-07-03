@@ -22,7 +22,8 @@
 <div class="container">
     <div class="animate-repeat" ng-repeat="recipe in recipes | filter:query | orderBy:'name'">
         <a href="#/recipes/{{ recipe.id }}">
-            <div class="jumbotron recipe_cards col-lg-5 col-med-5 col-sm-10 col-xs-10">
+            <div class="jumbotron recipe_cards col-lg-5 col-med-5 col-sm-10 col-xs-10"
+                 ng-style="{ 'background-image': 'url(' + recipe.photo + ')' }">
                 <br>
 
                 <div class="well">
@@ -36,3 +37,14 @@
         </a>
     </div>
 </div>
+
+<!--<script>
+    angular.module('app', [])
+
+    angular.module('app').controller('MyCtrl', function ($scope) {
+        $scope.bg =
+        {{ recipe.photo }}
+    })
+</script>-->
+
+<!---->

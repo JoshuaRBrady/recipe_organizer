@@ -12,9 +12,4 @@ angular.module('recipeOrganizerApp')
         Restangular.all('recipes').getList().then(function (data) {
             $scope.recipes = data;
         });
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
-    });
+    })
