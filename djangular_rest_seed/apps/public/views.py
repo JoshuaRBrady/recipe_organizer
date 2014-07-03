@@ -5,6 +5,7 @@ from serializers import *
 
 # Create your views here.
 
+
 class RecipeList(generics.ListAPIView):
     model = Recipe
     serializer_class = RecipeSerializer

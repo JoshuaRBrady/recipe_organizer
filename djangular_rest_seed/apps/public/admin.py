@@ -5,3 +5,4 @@ from models import *
 admin.site.register(Recipe)
 admin.site.register(Ingredient)
 admin.site.register(IngredientCategory)
+admin.site.register(RecipeTag)

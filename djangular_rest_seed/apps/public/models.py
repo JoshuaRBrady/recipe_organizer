@@ -3,8 +3,20 @@ from django.db import models
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
+    # photo = models.ImageField(upload_to='photos', blank=True)
     description = models.CharField(max_length=150, default="Yum.")
+    prep_time = models.IntegerField(default=0)
+    cook_time = models.IntegerField(default=0)
+    num_servings = models.IntegerField(max_length=4)
     ingredients = models.ManyToManyField("Ingredient")
+    tag = models.ManyToManyField("RecipeTag")
+
+    def __unicode__(self):
+        return self.name
+
+
+class RecipeTag (models.Model):
+    name = models.CharField(max_length=50)
 
     def __unicode__(self):
         return self.name
