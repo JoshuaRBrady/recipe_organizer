@@ -6,8 +6,6 @@
     </form>
     <div>
         <div class="sidebar-module sidebar-module-inset">
-            <br>
-            <h5>Filter your recipe search.</h5>
 
         </div>
         <div class="sidebar-module" ng-repeat="tag in tags | orderBy: 'name'">
@@ -19,32 +17,23 @@
 </div>
 
 <!-- Recipe Cards -->
-<div class="container">
-    <div class="animate-repeat" ng-repeat="recipe in recipes | filter:query | orderBy:'name'">
+<div class="container blank-recipe">
+    <div ng-repeat="recipe in recipes | filter:query | orderBy:'name'" class="search_transition">
         <a href="#/recipes/{{ recipe.id }}">
             <div class="jumbotron recipe_cards col-lg-5 col-med-5 col-sm-10 col-xs-10"
                  ng-style="{ 'background-image': 'url(' + recipe.photo + ')' }">
                 <br>
 
-                <div class="well">
-                    <h2>{{ recipe.name }}</h2>
+                <div class="well transparent">
+                    <div>
+                    <h2><strong>{{ recipe.name }}</strong></h2>
+                    </div>
                 </div>
-                <div class="well">
-                    <em>{{ recipe.description }}</em>
+                <div class="well transparent">
+                    <em><strong>{{ recipe.description }}</strong></em>
                 </div>
                 <br>
             </div>
         </a>
     </div>
 </div>
-
-<!--<script>
-    angular.module('app', [])
-
-    angular.module('app').controller('MyCtrl', function ($scope) {
-        $scope.bg =
-        {{ recipe.photo }}
-    })
-</script>-->
-
-<!---->

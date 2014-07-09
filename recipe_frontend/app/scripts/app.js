@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
     .module('recipeOrganizerApp', [
         'ngAnimate',
@@ -44,4 +45,5 @@ angular
                 redirectTo: '/'
             });
         RestangularProvider.setBaseUrl('http://localhost:8001')
+
     });

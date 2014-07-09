@@ -1,66 +1,65 @@
-<div class="container">
-    <div>
-        <label>Recipe Name</label>
-        <input class="form-control"
-               type="text"
-               ng-model="recipe.name"
-               placeholder="Enter recipe name...">
-    </div>
-    <br>
-     <div>
-        <label>Recipe Photo</label>
-        <input class="form-control"
-               type="text"
-               ng-model="recipe.photo"
-               placeholder="Enter image path...">
-    </div>
+<section>
+    <div id="add_recipe" class="add_recipe container">
 
-    <div>
-        <label>Prep Time</label>
-        <input class="form-control"
-               type="text"
-               ng-model="recipe.prep_time"
-               placeholder="In minutes...">
-    </div>
-    <br>
-
-    <div>
-        <label>Description</label>
-        <textarea
-                type="text"
-                ng-model="recipe.description"
-                placeholder="Why is this a great recipe? Does it have a history?"
-                class="form-control"
-                rows="10">
-        </textarea>
-    </div>
-    <br>
-
-    <div>
-        <label>Cook Time</label>
-        <input class="form-control margin-bottom-20"
-               type="text"
-               ng-model="recipe.cook_time"
-               placeholder="In minutes...">
-
-
-    </div>
-    <br>
-
-    <div>
-        <div>
-            <label>Ingredients</label>
+        <div class="inline-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label>Recipe Name</label>
             <input class="form-control"
                    type="text"
-                   ng-model="ingredientName"
-                   typeahead="ingredient.name for ingredient in ingredients | filter:$viewValue | limitTo:20"
-                   placeholder="Enter an ingredient...">
-
-            <ol>
-                <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
-            </ol>
+                   ng-model="recipe.name"
+                   placeholder="Enter recipe name...">
         </div>
 
-        <button class="btn btn-success col-xs-12" ng-click="saveNewRecipe()" style="float: right">Save this</button>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label>Recipe Photo</label>
+            <input class="form-control"
+                   type="text"
+                   ng-model="recipe.photo"
+                   placeholder="Enter image path...">
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label>Prep Time</label>
+            <input class="form-control"
+                   type="text"
+                   ng-model="recipe.prep_time"
+                   placeholder="In minutes...">
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label>Cook Time</label>
+            <input class="form-control margin-bottom-20"
+                   type="text"
+                   ng-model="recipe.cook_time"
+                   placeholder="In minutes...">
+        </div>
+
+
+        <div class="col-xs-12">
+            <label>Description</label>
+            <textarea
+                    type="text"
+                    ng-model="recipe.description"
+                    placeholder="Tell everyone about this great recipe..."
+                    class="form-control"
+                    rows="10">
+            </textarea>
+        </div>
+
+        <div class="col-xs-12">
+            <div>
+                <label>Ingredients</label>
+                <input class="form-control"
+                       type="text"
+                       ng-model="ingredientName"
+                       typeahead="ingredient.name for ingredient in ingredients | filter:$viewValue | limitTo:20"
+                       placeholder="Enter an ingredient...">
+
+                <ol>
+                    <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+                </ol>
+            </div>
+
+            <button class="btn btn-success col-xs-12" ng-click="saveNewRecipe()" style="float: right">Save this</button>
+        </div>
     </div>
-</div>
+</section>

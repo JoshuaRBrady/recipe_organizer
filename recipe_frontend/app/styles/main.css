@@ -1,16 +1,45 @@
 .body {
-    background: #89F799;
+    background-image: url("../images/cuttingboard.jpg");
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: scroll;
+}
+
+a,
+.link {
+    color: #000000;
+}
+
+a,
+.link:hover {
+    color: #000000;
+}
+
+.add_recipe {
+    background-color: #66512c;
+    padding: 25px;
+    color: #ffffff;
+    border-radius: 10px;
 }
 
 .recipe_cards {
-    border: 1px solid;
     font-family: sans-serif;
     text-align: center;
-    margin: 25px;
+    margin: 15px;
     height: 30em;
     width: 30em;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background: no-repeat center center;
+    background-size: auto 100%;
+    border-radius: 10px;
+}
+
+.recipe_cards:hover {
+    opacity: 0.9;
+    background-size: auto 110%;
+    box-shadow: #D96205 1px;
+    transition: 0.25s;
 }
 
 .blog_sidebar {
@@ -21,6 +50,9 @@
 
 .recipe_detail_card {
     margin: auto;
+    background: no-repeat center center;
+    background-size: auto 95%;
+    background-color: #66512c;
 }
 
 .search_box {
@@ -37,4 +69,30 @@
 
 .views {
     margin-top: 75px;
+}
+
+.transparent {
+    opacity: 0.7;
+}
+
+.search_transition.ng-enter,
+.search_transition.ng-leave {
+    -webkit-transition: all linear 0.5s;
+    transition: all linear 0.5s;
+    position: relative;
+    display: block;
+}
+
+.search_transition.ng-leave.ng-leave-active,
+.search_transition.ng-enter {
+
+    opacity: 0;
+    height: 0;
+}
+
+.search_transition.ng-enter.ng-enter-active,
+.search_transition.ng-leave {
+
+    opacity: 1;
+    height: 30px;
 }

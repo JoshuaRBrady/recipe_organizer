@@ -1,42 +1,49 @@
-<div class="container" style="background: {{ recipe.photo }}">
-    <div class="jumbotron recipe_detail_card col-xs-12">
-        <br>
+<section id="all_recipes" class="all_recipes">
+    <div class="container">
+        <div class="jumbotron recipe_detail_card col-xs-12"
+             ng-style="{ 'background-image': 'url(' + recipe.photo + ')' }">
+            <br>
 
-        <div class="well" style="text-align: center">
-            <h2>{{ recipe.name }}</h2>
-        </div>
-        <br>
+            <div class="well transparent">
+                <h2>{{ recipe.name }}</h2>
+            </div>
+            <br>
 
-        <div class="well">
-            <em>{{ recipe.description }}</em>
-        </div>
-        <br>
+            <div class="well transparent ">
+                <em>{{ recipe.description }}</em>
+            </div>
+            <br>
 
-        <div class="well col-sm-4 col-xs-12">
-            <p>Prep time: {{ recipe.prep_time }} minutes</p>
+            <div class="well transparent col-sm-3 col-xs-12" style="float: left">
+                <div>
+                    <label>Prep time:</label>
+                    {{ recipe.prep_time }} minutes
+                    <br>
+                    <label>Cook time:</label>
+                    {{ recipe.cook_time }} minutes
+                </div>
+            </div>
 
-            <p>Cook time: {{ recipe.cook_time }} minutes</p>
-        </div>
+            <div class="well transparent col-sm-12 col-xs-12" style="float: right">
+                <label>Number of servings:</label>
+                {{ recipe.num_servings }}
+                <ul>
+                    <li class="col-xs-4" ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
+                </ul>
+            </div>
+            <br>
 
-        <div class="well col-sm-8 col-xs-12">
-            <label>Number of servings:</label>
-            {{ recipe.num_servings }}
-            <ul>
-                <li class="col-xs-6" ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
-            </ul>
-        </div>
-        <br>
+            <div>
 
-        <div>
-            <label>Directions:</label>
-
-            <div class="well col-xs-12">
-                {{ recipe.directions }}
+                <div class="well transparent col-xs-12">
+                    <label>Directions:</label>
+                    {{ recipe.directions }}
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <button class="btn btn-primary fa fa-edit" ng-click="editRecipe()">Edit</button>
+                <button class="btn btn-danger fa fa-trash-o" ng-click="deleteRecipe()"> Delete</button>
             </div>
         </div>
-        <div class="col-xs-12">
-            <button class="btn btn-primary fa fa-edit" ng-click="editRecipe()">Edit</button>
-            <button class="btn btn-danger fa fa-trash-o" ng-click="deleteRecipe()"> Delete</button>
-        </div>
     </div>
-</div>
+</section>

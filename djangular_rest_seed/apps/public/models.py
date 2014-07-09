@@ -7,7 +7,7 @@ class Recipe(models.Model):
     description = models.CharField(max_length=200, default="Yum.")
     prep_time = models.IntegerField(default=0)
     cook_time = models.IntegerField(default=0)
-    num_servings = models.IntegerField(max_length=4)
+    num_servings = models.IntegerField(max_length=4, default=1)
     ingredients = models.ManyToManyField("Ingredient", null=True, blank=True)
     directions = models.TextField(default="Please enter instructions on how to create this amazing cuisine.")
     tag = models.ManyToManyField("RecipeTag")
