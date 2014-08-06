@@ -1,7 +1,7 @@
 <section>
     <div id="add_recipe" class="add_recipe container">
 
-        <div class="inline-block col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <label>Recipe Name</label>
             <input class="form-control"
                    type="text"
@@ -15,6 +15,7 @@
                    type="text"
                    ng-model="recipe.photo"
                    placeholder="Enter image path...">
+            <br>
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -31,6 +32,7 @@
                    type="text"
                    ng-model="recipe.cook_time"
                    placeholder="In minutes...">
+            <br>
         </div>
 
 
@@ -43,6 +45,8 @@
                     class="form-control"
                     rows="10">
             </textarea>
+            <br>
+
         </div>
 
         <div class="col-xs-12">
@@ -57,6 +61,7 @@
                 <ol>
                     <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
                 </ol>
+                <br>
             </div>
 
             <button class="btn btn-success col-xs-12" ng-click="saveNewRecipe()" style="float: right">Save this</button>

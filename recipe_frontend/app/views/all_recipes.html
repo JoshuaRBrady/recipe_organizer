@@ -1,5 +1,5 @@
 <!-- Search bar -->
-<div class="blog_sidebar col-xs-2">
+<div class="blog_sidebar col-lg-3 col-md-3 hidden-xs hidden-sm">
     <form class="search_box">
         <input type="text" class="form-control" placeholder="Search recipe..."
                ng-model="query.name"/>
@@ -17,7 +17,7 @@
 </div>
 
 <!-- Recipe Cards -->
-<div class="container blank-recipe">
+<div class="container">
     <div ng-repeat="recipe in recipes | filter:query | orderBy:'name'" class="search_transition">
         <a href="#/recipes/{{ recipe.id }}">
             <div class="jumbotron recipe_cards col-lg-5 col-med-5 col-sm-10 col-xs-10"
